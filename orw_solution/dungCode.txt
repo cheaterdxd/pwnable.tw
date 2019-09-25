@@ -1,0 +1,18 @@
+parse_expr(*s,*arr){
+    for(i = 0;;i++){
+
+        //kiểm tra nếu là dấu
+        if((s+i) - 0x30 > 9){
+            v2 = (s+i) - s;
+            *malloc_add = malloc(v2+1);
+
+            // copy chuỗi v2 bytes chuỗi s vào ví trí mới malloc
+            memcpy(malloc_add,s,v2);
+
+            // gắn byte cuối của chuỗi = 0
+            *(malloc_add + v2) = 0
+
+            
+        }
+    }
+}
