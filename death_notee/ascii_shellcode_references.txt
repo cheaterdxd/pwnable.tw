@@ -1,0 +1,8 @@
+printable/ascii shellcode references
+link 1: tham khảo file .c của nó , xem cách nó gọi int 0x80 như nào 
+https://blog.zespre.com/2015/01/21/alnum-writeup.html
+link 2: bảng các intructions có thể in ra màn hình 
+https://nets.ec/Ascii_shellcode
+link 3: tool tạo ascii shellcode
+https://github.com/VincentDary/PolyAsciiShellGen
+ 
