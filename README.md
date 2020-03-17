@@ -1,4 +1,3 @@
-# pwnable.tw
-#solution pwnable.tw
-write up chi tiết được viết bên Wiki 
+# Solution pwnable.tw
+Write up chi tiết được viết bên Wiki 
 link: 
