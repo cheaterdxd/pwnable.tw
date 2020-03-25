@@ -1,5 +1,5 @@
 from pwn import *
-debug = 0
+debug = 1
 if debug:
 	s = process('./babystack')
 	raw_input('debug')
