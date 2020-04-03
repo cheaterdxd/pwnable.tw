@@ -1,6 +1,6 @@
 #chall.pwnable.tw 10104
 from pwn import *
-debug = 0
+debug = 1
 if debug:
 	s = process('./applestore')
 	context(log_level='debug')
